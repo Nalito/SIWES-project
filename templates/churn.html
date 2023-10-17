@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <style>
+            .my-container {
+                padding-left: 250px;
+                padding-right: 250px;
+                padding-top: 50px;
+                border: 5px black;
+            }
+
+            body {
+                background-color: #DDD0C8;
+                color: #323232;
+            }
+        </style> -->
+
+            
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+            @import url(https://db.onlinewebfonts.com/c/cec88e5a4cf367c4620cd23c5a184439?family=PolySans+Median);
+
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+            }
+
+            :root {
+            --main-color: rgb(34, 110, 204);
+            --standard-radius: 4px;
+            }
+
+            body {
+            background: whitesmoke;
+            }
+
+            /* .title-container {
+            height: 100px;
+            align-items: center;
+            } */
+
+            h1 {
+            font-family: "Polysans Median";
+            text-align: center;
+            margin-top: 30px;
+            color: var(--main-color);
+            }
+
+            .my-container {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 85vh;
+            /* width: 350px; */
+            }
+
+            .styled-card {
+            background: white;
+            padding: 30px 30px 0 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 30px #aeaeae5e;
+            }
+
+            .my-container .form-group label {
+            font-size: 14px;
+            }
+
+            .my-container .form-group input {
+            width: 350px;
+            height: 30px;
+            margin: 0.1rem 0 1rem 0;
+            padding: 0 0 0 0.6rem;
+            border: 1px solid grey;
+            border-radius: var(--standard-radius);
+
+            &:focus {
+                border: 1px solid var(--main-color);
+                outline: none;
+                border-radius: var(--standard-radius);
+            }
+            }
+
+            .my-container .form-group button {
+            /* height: 30px; */
+            border: none;
+            font-family: "Polysans Median";
+            font-size: 1.2rem;
+            font-weight: lighter;
+            background: var(--main-color);
+            top: 15px; 
+            left: calc(50% - 20px);
+            flex-direction: column;
+            color: white;
+            padding: 15px 15px;
+            border-radius: 30px;
+            margin: auto;
+            letter-spacing: 0.1ch;
+            transform: translateY(1.5rem);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgb(17, 85, 168);
+            }
+            }
+
+            @media (max-width: 562px) {
+            h1 {
+                transform: scale(0.8);
+            }
+            }
+
+            @media (max-width: 422px) {
+            .my-container {
+                height: 80vh;
+            }
+            .styled-card {
+                padding: 20px 20px 0 20px;
+                height: 70vh;
+            }
+            .my-container .form-group input {
+                width: 300px;
+            }
+            .my-container .form-group button {
+                transform: translateY(-0.4rem);
+                font-size: 1rem;
+            }
+            }
+
+        </style>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="text-center title-container">
+            {% if pred != "": %}
+            <h1> Prediction: {{pred}} </h1>
+
+            {% endif %}
+        </div>
+
+        </br>
+        
+            <div class="my-container">
+                <form action="/" method="GET">
+                    <div class="form-group">        
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Make another prediction</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <style>
+      .my-container {
+        padding-left: 150px;
+        padding-right: 250px;
+        padding-top: 50px;
+        border: 5px black;
+      }
+
+      body {
+        background-color: #ddd0c8;
+        color: #323232;
+      }
+    </style> -->
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+        @import url(https://db.onlinewebfonts.com/c/cec88e5a4cf367c4620cd23c5a184439?family=PolySans+Median);
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        }
+
+        :root {
+        --main-color: rgb(34, 110, 204);
+        --standard-radius: 4px;
+        }
+
+        body {
+        background: whitesmoke;
+        }
+
+        /* .title-container {
+        height: 100px;
+        align-items: center;
+        } */
+
+        h1 {
+        font-family: "Polysans Median";
+        text-align: center;
+        margin-top: 30px;
+        color: var(--main-color);
+        padding-bottom: 10px;
+        }
+
+        .my-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 600px;
+        /* width: 350px; */
+        }
+
+        .styled-card {
+        background: white;
+        padding: 30px 30px 0 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 30px #aeaeae5e;
+        }
+
+        .my-container .form-group label {
+        font-size: 14px;
+        }
+
+        .my-container .form-group input {
+        width: 350px;
+        height: 30px;
+        margin: 0.1rem 0 1rem 0;
+        padding: 0 0 0 0.6rem;
+        border: 1px solid grey;
+        border-radius: var(--standard-radius);
+
+        &:focus {
+            border: 1px solid var(--main-color);
+            outline: none;
+            border-radius: var(--standard-radius);
+        }
+        }
+
+        .my-container .form-group button {
+        /* height: 30px; */
+        border: none;
+        font-family: "Polysans Median";
+        font-size: 1.2rem;
+        font-weight: lighter;
+        background: var(--main-color);
+        color: white;
+        border-radius: 30px;
+        padding: 15px 15px;
+        margin: auto;
+        letter-spacing: 0.1ch;
+        transform: translateY(1.5rem);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgb(17, 85, 168);
+        }
+        }
+
+        @media (max-width: 562px) {
+        h1 {
+            transform: scale(0.8);
+        }
+        }
+
+        @media (max-width: 422px) {
+        .my-container {
+            height: 80vh;
+        }
+        .styled-card {
+            padding: 20px 20px 0 20px;
+            height: 70vh;
+        }
+        .my-container .form-group input {
+            width: 300px;
+        }
+        .my-container .form-group button {
+            transform: translateY(-0.4rem);
+            font-size: 1rem;
+        }
+        }
+
+    </style>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <!-- BOOTSTRAP SCRIPTS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  </head>
+
+  <body>
+    <div class="text-center title-container">
+      <h1>Churn Prediction Website Prototype</h1>
+    </div>
+
+    <div class="my-container">
+      <div class="styled-card">
+        <form action="/churn" method="POST">
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Credit Score: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Ranges from 350 to 850"
+                name="CreditScore"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Geography: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="France=1; Germany=2; Spain=3"
+                name="Geography"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Gender: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Male=1; Female=0"
+                name="Gender"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Age: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Ranges from 18 to 92"
+                name="Age"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Balance: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Balance"
+                name="Balance"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Has Credit Card: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="1 if yes; 0 otherwise"
+                name="HasCrCard"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2"> Estimated Salary: </label>
+            <div class="col-sm-10">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Estimated Salary"
+                name="EstimatedSalary"
+              />
+            </div>
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <div
+              class="col-sm-offset-2 col-sm-10"
+              style="display: flex; justify-content: center"
+            >
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
